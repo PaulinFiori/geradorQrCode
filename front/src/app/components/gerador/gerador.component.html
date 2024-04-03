@@ -1,0 +1,19 @@
+<div class="container mt-3">
+    <div class="row">
+      <div class="col-12">
+        <form (ngSubmit)="busca(form)" #form="ngForm">
+          <div class="form-group mb-3">
+            <label for="texto">Texto *</label>
+            <input type="text" class="form-control" id="texto" aria-describedby="textoHelp" placeholder="Digite o texto" 
+                [(ngModel)]="value"  #texto="ngModel" name="relatorio" [required]="true">
+          </div>
+          <button type="submit" class="btn btn-primary" [disabled]="!value">Gerar</button>
+        </form>
+        <hr>
+      </div>
+      <div class="col-12">
+        <p>Resultado:</p>
+        <img [src]="qrcode">
+      </div>
+    </div>
+</div>
