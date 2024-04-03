@@ -21,7 +21,6 @@ export class GeradorComponent {
     this.crudService.post("generator/qr-code", this.value).subscribe({
       next: (response: any) => {
         this.isLoading = false;
-        console.log(response);
         const reader = new FileReader();
         reader.onload = (event: any) => {
           this.qrcode = event.target.result;

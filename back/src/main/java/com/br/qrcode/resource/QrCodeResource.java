@@ -47,14 +47,10 @@ public class QrCodeResource {
         } catch (WriterException | IOException e) {
             e.printStackTrace();
         }
-        // Convert Byte Array into Base64 Encode String
-        String qrcode = Base64.getEncoder().encodeToString(image);
 
         HttpHeaders headers = new HttpHeaders();
         headers.setContentType(MediaType.IMAGE_PNG);
         headers.setContentLength(image.length);
         return new ResponseEntity<>(image, headers, HttpStatus.OK);
-
-        //return ResponseEntity.ok().build();
     }
 }
